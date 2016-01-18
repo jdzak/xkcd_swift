@@ -9,56 +9,6 @@
 import UIKit
 import SwiftyJSON
 
-struct MenuItem {
-  var name: String
-  var price: NSDecimalNumber
-}
-extension MenuItem: Equatable {}
-func == (lhs: MenuItem, rhs: MenuItem) -> Bool {
-  return lhs.name == rhs.name && lhs.price == rhs.price
-}
-
-struct ProblemCriteria {
-  var targetPrice: NSDecimalNumber
-  var menuItems: [MenuItem]
-
-  static func fromFile(fileName: String) -> ProblemCriteria? {
-    let componants = fileName.componentsSeparatedByString(".")
-    guard let filePath = NSBundle.mainBundle().pathForResource(componants[0], ofType: componants[1]) else {
-      return nil
-    }
-
-    guard let fileData = NSData(contentsOfFile: filePath) else {
-      return nil
-    }
-
-    let json = JSON(data: fileData)
-
-    return self.fromJson(json)
-  }
-
-  static func fromJson(json: JSON) -> ProblemCriteria {
-    let targetPrice = NSDecimalNumber(string: self.removeDollarSign(json["target_price"].stringValue))
-
-    var menuItems = [MenuItem]()
-    for menuItemJson in json["items"].arrayValue {
-      let dict = menuItemJson.dictionaryValue
-      if let name = dict["name"]?.stringValue, priceStr = dict["price"]?.string {
-        let price = NSDecimalNumber(string: removeDollarSign(priceStr))
-        menuItems.append(MenuItem(name: name, price: price))
-      }
-    }
-
-    return ProblemCriteria(targetPrice: targetPrice, menuItems: menuItems)
-  }
-
-  static func removeDollarSign(price: String) -> String {
-    return price.stringByReplacingOccurrencesOfString("$", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-  }
-}
-
-
-
 class ViewController: UITableViewController {
   let CellIdentifier = "cell"
   var solutions = [[MenuItem]]()

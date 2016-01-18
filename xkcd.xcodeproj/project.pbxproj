@@ -18,6 +18,8 @@
 		FE4A0B501C3CB07E00800FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4A0B4E1C3CB07E00800FA0 /* LaunchScreen.storyboard */; };
 		FE4A0B5B1C3CB07E00800FA0 /* xkcdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4A0B5A1C3CB07E00800FA0 /* xkcdTests.swift */; };
 		FE4A0B661C3CB5C600800FA0 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = FE4A0B651C3CB5C600800FA0 /* menu.json */; };
+		FEEBC7D91C4D39CC0085524C /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBC7D81C4D39CC0085524C /* MenuItem.swift */; };
+		FEEBC7DB1C4D39EE0085524C /* ProblemCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBC7DA1C4D39EE0085524C /* ProblemCriteria.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		FE4A0B5A1C3CB07E00800FA0 /* xkcdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xkcdTests.swift; sourceTree = "<group>"; };
 		FE4A0B5C1C3CB07E00800FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE4A0B651C3CB5C600800FA0 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		FEEBC7D81C4D39CC0085524C /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = xkcd/Models/MenuItem.swift; sourceTree = "<group>"; };
+		FEEBC7DA1C4D39EE0085524C /* ProblemCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProblemCriteria.swift; path = xkcd/Models/ProblemCriteria.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		FE4A0B391C3CB07E00800FA0 = {
 			isa = PBXGroup;
 			children = (
+				FEEBC7D81C4D39CC0085524C /* MenuItem.swift */,
+				FEEBC7DA1C4D39EE0085524C /* ProblemCriteria.swift */,
 				FE4A0B441C3CB07E00800FA0 /* xkcd */,
 				FE4A0B591C3CB07E00800FA0 /* xkcdTests */,
 				FE4A0B431C3CB07E00800FA0 /* Products */,
@@ -354,7 +360,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEBC7DB1C4D39EE0085524C /* ProblemCriteria.swift in Sources */,
 				FE4A0B481C3CB07E00800FA0 /* ViewController.swift in Sources */,
+				FEEBC7D91C4D39CC0085524C /* MenuItem.swift in Sources */,
 				FE2BA4B31C3CC77000C77321 /* Waiter.swift in Sources */,
 				FE4A0B461C3CB07E00800FA0 /* AppDelegate.swift in Sources */,
 			);
