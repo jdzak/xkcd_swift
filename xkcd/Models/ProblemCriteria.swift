@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct ProblemCriteria {
   var targetPrice: NSDecimalNumber
